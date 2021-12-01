@@ -1,0 +1,86 @@
+main{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    border: 3px solid black;
+}
+.list-section{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+.task-section{
+    width: 65%;
+}
+.vertical-seperator{
+    height: 100%;
+    border: 1px solid black;
+}
+
+.list-input-form{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+#list-input{
+    width: 85%;
+}
+
+.task-input-form{
+    padding: 20px;
+}
+
+#task-input{
+    margin-left: 20px;
+    width: 83%;
+}
+
+.ticked{
+    text-decoration: line-through;
+}
+
+#lists-list{
+    padding: 0;
+}
+
+#lists-list li{
+    margin: 2px 0;
+    list-style: none;
+    border: 1px solid black;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tasks-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.task-input-container{
+    display: flex;
+}
+
+.task-input-container input{
+    margin-right: 10px;
+}
+
+.task-input-container button{
+    text-decoration: none;
+}
+
+#tasks-list li{
+    margin: 2px 0;
+    border: 1px solid black;
+    list-style: none;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
