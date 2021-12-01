@@ -1,0 +1,49 @@
+.task-section{
+    width: 65%;
+}
+
+.task-input-form{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#task-input{
+    margin-left: 20px;
+    width: 75%;
+}
+
+#tasks-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    /* overflow: scroll;
+    height: 84%; */
+}
+
+.task-input-container{
+    display: flex;
+    width: 100%;
+}
+
+.task-input-container label{
+    margin-left: 10px;
+    width: 100%;
+}
+
+.task-input-container button{
+    text-decoration: none;
+}
+
+#tasks-list li{
+    margin: 2px 0;
+    border: 1px solid black;
+    list-style: none;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

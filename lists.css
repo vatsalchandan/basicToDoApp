@@ -1,0 +1,37 @@
+.list-section{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.list-input-form{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#list-input{
+    width: 100%;
+}
+
+#lists-list{
+    padding: 0;
+    overflow: scroll;
+    /* height: 84%;
+    padding-top: 60px; */
+}
+
+#lists-list li{
+    /* margin-top: 60px; */
+    margin: 2px 0;
+    list-style: none;
+    border: 1px solid black;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
