@@ -1,6 +1,9 @@
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./lists.css">
+        <link rel="stylesheet" href="./tasks.css">
     </head>
     <body>
         <main>
@@ -9,18 +12,21 @@
                 <ul id="lists-list"></ul>
                 <form class="list-input-form">
                     <input id="list-input" type="text" placeholder="Add List">
-                    <button type="submit">Add</button>
+                    <button class="addButton" type="submit">Add</button>
                 </form>
             </div>
             <div class="vertical-seperator"></div>
             <div class="task-section">
                 <form class="task-input-form">
-                    <button type="submit">Add</button>
+                    <button class="addButton" type="submit">Add Button</button>
                     <input id="task-input" type="text" placeholder="Add Task">
+                    <input type="file" id="task-img" name="task-img" accept="image/*">
                 </form>
                 <ul id="tasks-list"></ul>
             </div>
         </main>
-        <script src="./index.js"/>
+        <script src="./index.js"></script>
+        <script src="./tasks.js"></script>
+        <script src="./lists.js"></script>
     </body>
 </html>
