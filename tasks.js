@@ -1,18 +1,33 @@
-function Task(text){
+function Task(text,img = null){
     this.id = 'a'+Date.now().toString();
     this.text = text;
+    this.img = img;
     this.marked = false;
 }
 
 const taskForm = document.querySelector('.task-input-form');
 taskForm.addEventListener('submit', event =>{
     event.preventDefault();
-    const input = document.querySelector('#task-input');
-    const taskName = input.value;
+    const textinput = document.querySelector('#task-input');
+    const fileInput = document.getElementById('task-img');
+    let taskName = textinput.value;
+    const imgFile = fileInput.files;
+    let img;
 
-    if(taskName != ''){
-        addToTasks(taskName);
-        input.value = '';
+    if(taskName === '' && imgFile.length > 0){
+        taskName = imgFile[0].name;
+        img = imgFile[0];
+        addToTasks(taskName,img);
+        fileInput.value = '';
+    }else if(taskName != ''){
+        if(imgFile.length > 0){
+            img = imgFile[0];
+            addToTasks(taskName,img);
+            fileInput.value = '';
+        }else{
+            addToTasks(taskName);
+        }
+        textinput.value = '';
     }
 })
 
@@ -29,6 +44,17 @@ function renderTask(tasksList, task){
     const taskCheckbox = taskElement.getElementsByTagName('input')[0];
     const labelElement = taskElement.getElementsByTagName('label')[0];
     const deleteButton = taskElement.getElementsByClassName('material-icons del')[0];
+    if(task.img){
+        const taskInputContainer = taskElement.querySelector('.task-input-container');
+        const imgElement = document.createElement('img');
+        imgElement.classList.add("obj");
+        imgElement.file = task.img;
+        imgElement.width = imgElement.height = 20;
+        taskInputContainer.insertBefore(imgElement,labelElement);
+        const reader = new FileReader();
+        reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(imgElement);
+        reader.readAsDataURL(task.img);
+    }
     taskElement.addEventListener('click',event =>{
         if(event.target === taskCheckbox){
             markDoneTask(task.id);
@@ -92,9 +118,9 @@ function updateLabelOfTask(taskId, updatedTaskName){
     }
 }
 
-function addToTasks(taskName){
+function addToTasks(taskName,taskImg = null){
 
-    const task = new Task(taskName);
+    const task = new Task(taskName,taskImg);
     if(selectedListId){
         const listIndex = lists.findIndex(list => list.id === selectedListId)
 

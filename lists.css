@@ -20,13 +20,10 @@
 
 #lists-list{
     padding: 0;
-    overflow: scroll;
-    /* height: 84%;
-    padding-top: 60px; */
+    overflow: auto;
 }
 
 #lists-list li{
-    /* margin-top: 60px; */
     margin: 2px 0;
     list-style: none;
     border: 1px solid black;
