@@ -5,6 +5,18 @@ function Task(text,img = null){
     this.marked = false;
 }
 
+Task.prototype.markTask = function(value){
+    this.marked = value;
+}
+
+Task.prototype.setImg = function(value){
+    this.img = value
+}
+
+Task.prototype.setName = function(value){
+    this.text = value
+}
+
 const taskForm = document.querySelector('.task-input-form');
 taskForm.addEventListener('submit', event =>{
     event.preventDefault();
@@ -86,7 +98,7 @@ function showTasksOfList(){
 function markDoneTask(taskId){
     const selectedListIndex = lists.findIndex(list => list.id === selectedListId)
     const index = lists[selectedListIndex].tasks.findIndex(task => task.id === taskId);
-    lists[selectedListIndex].tasks[index].marked = !lists[selectedListIndex].tasks[index].marked;
+    lists[selectedListIndex].tasks[index].markTask(!lists[selectedListIndex].tasks[index].marked);
     const marked = lists[selectedListIndex].tasks[index].marked
     const taskListElement = document.getElementById(`l${taskId}`);
     const labelTaskElement = taskListElement.getElementsByTagName('label')[0];
@@ -114,7 +126,7 @@ function updateLabelOfTask(taskId, updatedTaskName){
     const list = lists[listIndex];
     const index = list.tasks.findIndex(task => task.id === taskId);
     if(index > -1){
-        list.tasks[index].text = updatedTaskName;
+        list.tasks[index].setName(updatedTaskName)
     }
 }
 
