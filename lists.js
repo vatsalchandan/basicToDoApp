@@ -1,5 +1,3 @@
-// const lists = lists;
-// const tasklistfunction = showTasksOfList;
 const lists = [];
 let selectedListId;
 
